@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fuj-tracker-v1';
+const CACHE_NAME = 'shj-tracker-v1';
 const ASSETS = [
   './index.html',
   './rakwalkin.png',
