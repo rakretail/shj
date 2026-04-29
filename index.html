@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1081,7 +1079,7 @@
             transition: transform 0.12s ease, box-shadow 0.12s ease;
             cursor: default;
         }
-        body.dark .heatmap-grid .hm-cell { background: rgba(255,255,255,0.04); }
+        body.dark .heatmap-grid .hm-cell[data-i="0"] { background: rgba(255,255,255,0.04); }
         .heatmap-grid .hm-cell[data-i="1"] { background: rgba(0,168,168,0.18); }
         .heatmap-grid .hm-cell[data-i="2"] { background: rgba(0,168,168,0.32); }
         .heatmap-grid .hm-cell[data-i="3"] { background: rgba(0,150,150,0.50); }
@@ -1089,6 +1087,14 @@
         .heatmap-grid .hm-cell[data-i="5"] {
             background: linear-gradient(135deg, #006666, #f7971e);
             box-shadow: 0 2px 8px rgba(247,151,30,0.35);
+        }
+        body.dark .heatmap-grid .hm-cell[data-i="1"] { background: rgba(0,210,210,0.22); }
+        body.dark .heatmap-grid .hm-cell[data-i="2"] { background: rgba(0,210,210,0.40); }
+        body.dark .heatmap-grid .hm-cell[data-i="3"] { background: rgba(0,190,190,0.60); }
+        body.dark .heatmap-grid .hm-cell[data-i="4"] { background: rgba(0,168,168,0.82); }
+        body.dark .heatmap-grid .hm-cell[data-i="5"] {
+            background: linear-gradient(135deg, #00a8a8, #f7971e);
+            box-shadow: 0 2px 10px rgba(247,151,30,0.45);
         }
         .heatmap-grid .hm-cell:hover {
             transform: scale(1.18);
@@ -1916,7 +1922,7 @@ async function submitPin() {
     errEl.innerText = "";
 
     if (!/^\d{4}$/.test(pin)) {
-        errEl.innerText = "PIN shjt be exactly 4 digits.";
+        errEl.innerText = "PIN must be exactly 4 digits.";
         return;
     }
 
@@ -2016,7 +2022,7 @@ function logout() {
 
 function openChangePin() {
     if (!getCurrentExec()) {
-        alert("You shjt be logged in to change your PIN.");
+        alert("You must be logged in to change your PIN.");
         return;
     }
     document.getElementById("changePinExecName").innerText = getCurrentExec();
@@ -2044,7 +2050,7 @@ async function submitChangePin() {
     const confirmPin = (document.getElementById("confirmPinInput").value || "").trim();
 
     if (!/^\d{4}$/.test(current) || !/^\d{4}$/.test(next) || !/^\d{4}$/.test(confirmPin)) {
-        errEl.innerText = "All PINs shjt be exactly 4 digits.";
+        errEl.innerText = "All PINs must be exactly 4 digits.";
         return;
     }
     if (next !== confirmPin) {
@@ -2052,7 +2058,7 @@ async function submitChangePin() {
         return;
     }
     if (next === current) {
-        errEl.innerText = "New PIN shjt be different from current PIN.";
+        errEl.innerText = "New PIN must be different from current PIN.";
         return;
     }
 
@@ -2380,7 +2386,7 @@ function update(name, val) {
                     pin: loggedInPin
                 });
             } else {
-                alert(`Access Denied: You are ${dist.toFixed(2)}km away. You shjt be at Sharjah Showroom.`);
+                alert(`Access Denied: You are ${dist.toFixed(2)}km away. You must be at Sharjah Showroom.`);
             }
         }, 
         (err) => alert("Location Error: Please ensure GPS is ON and permission is granted."), 
@@ -2485,17 +2491,17 @@ function updateInsights(monthlyCounts, dailyTotal) {
     messages.push(`✨ ${quotes[Math.floor(Math.random() * quotes.length)]}`);
 
     // ---------- Manager wisdom (kept, lightly polished) ----------
-    const AHMED = [
-        `🧠 <span class="feed-pill gold">AHMED'S RULE</span> "If a customer smiles, they've basically bought a bathroom set." 🛁`,
-        `☕ <span class="feed-pill gold">AHMED SAYS</span> "The dashboard is green, but my tea is cold. More sales please!"`,
-        `🪑 <span class="feed-pill gold">AHMED SAYS</span> "If you have time to sit, you have time to sell."`,
-        `🚨 <span class="feed-pill red">AHMED ALERT</span> "Someone just walked in. Why are we still breathing normally?"`,
-        `🧾 <span class="feed-pill gold">AHMED SAYS</span> "Every 'just looking' is a future invoice. Act accordingly."`,
-        `💼 <span class="feed-pill gold">AHMED'S RULE</span> "If they ask for a discount, increase your confidence."`,
-        `🏠 <span class="feed-pill gold">AHMED SAYS</span> "Don't show tiles… show them their dream home."`,
-        `👃 <span class="feed-pill gold">AHMED SENSES</span> "I can smell a big sale from the parking lot. Get ready!" 💰`
+    const AHMED AL HAMI = [
+        `🧠 <span class="feed-pill gold">AHMED AL HAMI'S RULE</span> "If a customer smiles, they've basically bought a bathroom set." 🛁`,
+        `☕ <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "The dashboard is green, but my tea is cold. More sales please!"`,
+        `🪑 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "If you have time to sit, you have time to sell."`,
+        `🚨 <span class="feed-pill red">AHMED AL HAMI ALERT</span> "Someone just walked in. Why are we still breathing normally?"`,
+        `🧾 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "Every 'just looking' is a future invoice. Act accordingly."`,
+        `💼 <span class="feed-pill gold">AHMED AL HAMI'S RULE</span> "If they ask for a discount, increase your confidence."`,
+        `🏠 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "Don't show tiles… show them their dream home."`,
+        `👃 <span class="feed-pill gold">AHMED AL HAMI SENSES</span> "I can smell a big sale from the parking lot. Get ready!" 💰`
     ];
-    messages.push(AHMED[Math.floor(Math.random() * AHMED.length)]);
+    messages.push(AHMED AL HAMI[Math.floor(Math.random() * AHMED AL HAMI.length)]);
 
     // ---------- Milestones ----------
     const monthlyTotal = Object.values(monthlyCounts).reduce((a, b) => a + b, 0);
@@ -3026,7 +3032,7 @@ function renderChartKpis(data, type) {
 function updateDateTime(){
     const now = new Date();
     document.getElementById('day').innerText = now.toLocaleDateString('en-US', { weekday: 'long' });
-    document.getElementById('date').innerText = now.toLocaleDateString('en-GB');
+    document.getElementById('date').innerText = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
     // Split-digit clock: HH : MM with seconds shown as a small accent chip.
     // Falls back gracefully if the new split spans don't exist (older markup).
