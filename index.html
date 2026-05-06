@@ -1784,7 +1784,7 @@ let compareChart;
 let compareRange = "week"; // "week" or "month"
 let historyData = [];
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const showroomLat = 25.323798, showroomLon = 55.401311, allowedRadiusKM = 1.0;
+const showroomLat = 25.323798, showroomLon = 55.401311, allowedRadiusKM = 4.0;
 
 // ================================================================
 //  NEW: AUTHENTICATION / PIN LAYER
@@ -2491,17 +2491,17 @@ function updateInsights(monthlyCounts, dailyTotal) {
     messages.push(`✨ ${quotes[Math.floor(Math.random() * quotes.length)]}`);
 
     // ---------- Manager wisdom (kept, lightly polished) ----------
-    const AHMED AL HAMI = [
-        `🧠 <span class="feed-pill gold">AHMED AL HAMI'S RULE</span> "If a customer smiles, they've basically bought a bathroom set." 🛁`,
-        `☕ <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "The dashboard is green, but my tea is cold. More sales please!"`,
-        `🪑 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "If you have time to sit, you have time to sell."`,
-        `🚨 <span class="feed-pill red">AHMED AL HAMI ALERT</span> "Someone just walked in. Why are we still breathing normally?"`,
-        `🧾 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "Every 'just looking' is a future invoice. Act accordingly."`,
-        `💼 <span class="feed-pill gold">AHMED AL HAMI'S RULE</span> "If they ask for a discount, increase your confidence."`,
-        `🏠 <span class="feed-pill gold">AHMED AL HAMI SAYS</span> "Don't show tiles… show them their dream home."`,
-        `👃 <span class="feed-pill gold">AHMED AL HAMI SENSES</span> "I can smell a big sale from the parking lot. Get ready!" 💰`
+    const AHMED = [
+        `🧠 <span class="feed-pill gold">AHMED'S RULE</span> "If a customer smiles, they've basically bought a bathroom set." 🛁`,
+        `☕ <span class="feed-pill gold">AHMED SAYS</span> "The dashboard is green, but my tea is cold. More sales please!"`,
+        `🪑 <span class="feed-pill gold">AHMED SAYS</span> "If you have time to sit, you have time to sell."`,
+        `🚨 <span class="feed-pill red">AHMED ALERT</span> "Someone just walked in. Why are we still breathing normally?"`,
+        `🧾 <span class="feed-pill gold">AHMED SAYS</span> "Every 'just looking' is a future invoice. Act accordingly."`,
+        `💼 <span class="feed-pill gold">AHMED'S RULE</span> "If they ask for a discount, increase your confidence."`,
+        `🏠 <span class="feed-pill gold">AHMED SAYS</span> "Don't show tiles… show them their dream home."`,
+        `👃 <span class="feed-pill gold">AHMED SENSES</span> "I can smell a big sale from the parking lot. Get ready!" 💰`
     ];
-    messages.push(AHMED AL HAMI[Math.floor(Math.random() * AHMED AL HAMI.length)]);
+    messages.push(AHMED[Math.floor(Math.random() * AHMED.length)]);
 
     // ---------- Milestones ----------
     const monthlyTotal = Object.values(monthlyCounts).reduce((a, b) => a + b, 0);
